@@ -1,0 +1,37 @@
+﻿/* Election Results – Admin styles */
+.er-wrap { max-width: 960px; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+.er-header { border-bottom: 3px solid #1a1a6e; padding-bottom: 14px; margin-bottom: 24px; }
+.er-header h1 { margin: 0 0 4px; font-size: 26px; color: #1a1a6e; }
+.er-sub { margin: 0; color: #666; font-size: 14px; }
+.er-notice { padding: 12px 16px; border-radius: 4px; margin-bottom: 20px; font-size: 14px; font-weight: 600; }
+.er-notice--success { background: #d4edda; border-left: 4px solid #28a745; color: #155724; }
+.er-notice--error   { background: #f8d7da; border-left: 4px solid #dc3545; color: #721c24; }
+.er-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.er-card { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 22px 24px; }
+.er-card h2 { margin: 0 0 10px; font-size: 16px; color: #23282d; }
+.er-card p  { margin: 0 0 14px; color: #555; font-size: 14px; }
+.er-card--full { grid-column: 1 / -1; }
+.er-file-label {
+  display: flex; align-items: center; gap: 10px;
+  border: 2px dashed #aaa; border-radius: 6px;
+  padding: 14px 16px; cursor: pointer; margin-bottom: 14px;
+  font-size: 14px; color: #444; transition: border-color .2s, background .2s;
+}
+.er-file-label:hover { border-color: #1a1a6e; background: #f0f2ff; }
+.er-file-label input[type="file"] { position: absolute; opacity: 0; pointer-events: none; }
+.er-file-icon { font-size: 22px; line-height: 1; }
+.er-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  border: 0; border-radius: 4px; padding: 9px 18px;
+  font-size: 14px; font-weight: 700; cursor: pointer; transition: opacity .15s;
+}
+.er-btn:hover { opacity: .85; }
+.er-btn--primary { background: #1a1a6e; color: #fff; }
+.er-btn--danger  { background: #b22222; color: #fff; }
+.er-summary { border-collapse: collapse; width: 100%; font-size: 14px; }
+.er-summary th, .er-summary td { padding: 7px 10px; border-bottom: 1px solid #eee; text-align: left; }
+.er-summary th { color: #555; font-weight: 600; width: 140px; }
+.er-empty { color: #999; font-style: italic; font-size: 14px; }
+.er-steps { margin: 0; padding-left: 20px; color: #444; font-size: 14px; line-height: 2; }
+.er-steps code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 13px; }
+@media (max-width: 700px) { .er-grid { grid-template-columns: 1fr; } }

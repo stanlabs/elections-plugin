@@ -1,0 +1,128 @@
+﻿/* Election Results Dashboard – Frontend (WordPress plugin)
+   All rules are scoped to .er-root to avoid theme conflicts. */
+
+.er-root {
+  --er-text: #4d4b4b;
+  --er-heading: #000000;
+  --er-link: #00008b;
+  --er-primary: #1a1a6e;
+  --er-panel: #ffffff;
+  --er-soft: #f5f5f8;
+  --er-line: #999999;
+  --er-line-soft: #dddddd;
+  font-family: Bahnschrift, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  color: var(--er-text);
+  box-sizing: border-box;
+}
+
+.er-root *, .er-root *::before, .er-root *::after { box-sizing: border-box; }
+
+/* ── Header ── */
+.er-site-header { background: #f0f0f0; border-bottom: 1px solid var(--er-line); }
+.er-header-inner { max-width: 1320px; margin: 0 auto; padding: 0; display: flex; align-items: stretch; }
+.er-year-logo { display: inline-flex; align-items: center; border-right: 1px solid var(--er-line); padding: 8px 12px; gap: 2px; }
+.er-year-logo-digit { display: inline-flex; align-items: center; justify-content: center; width: 22px; height: 30px; color: #fff; font-weight: 700; font-size: 24px; line-height: 1; }
+.er-year-logo-red  { background: #e34c43; }
+.er-year-logo-blue { background: #2988d8; }
+.er-jurisdiction-tabs { display: flex; align-items: stretch; }
+.er-jurisdiction-tab { border: 0; border-right: 1px solid var(--er-line); background: transparent; color: var(--er-link); padding: 12px 18px; font-size: 21px; font-weight: 700; cursor: pointer; }
+.er-jurisdiction-tab:hover { text-decoration: underline; }
+.er-jurisdiction-tab.active { background: var(--er-primary); color: #fff; }
+
+/* ── Page ── */
+.er-page-content { max-width: 1320px; margin: 0 auto; padding: 22px 16px 16px; }
+.er-jurisdiction-heading { margin: 0 0 20px; color: var(--er-heading); font-family: "Barlow Condensed","Segoe UI",Arial,sans-serif; font-size: 64px; font-weight: 800; line-height: 1; letter-spacing: -0.5px; text-transform: uppercase; border-bottom: 3px solid var(--er-primary); padding-bottom: 12px; }
+.er-election-group { background: var(--er-panel); border-top: 1px solid var(--er-line-soft); margin-bottom: 28px; }
+.er-election-header { padding: 12px 0 10px; }
+.er-election-title { margin: 0 0 4px; color: var(--er-primary); font-family: "Barlow Condensed","Segoe UI",Arial,sans-serif; font-size: 34px; font-weight: 700; line-height: 1.1; letter-spacing: 0.3px; text-transform: uppercase; }
+.er-election-meta { margin: 0; font-size: 13px; color: #666; }
+.er-race-stack { display: block; }
+.er-race-card { border-top: 1px solid var(--er-line-soft); padding: 18px 0 0; margin-top: 16px; }
+.er-race-title { margin: 0 0 2px; color: var(--er-heading); font-family: "Barlow Condensed","Segoe UI",Arial,sans-serif; font-size: 38px; font-weight: 700; line-height: 1.15; letter-spacing: 0.2px; }
+.er-race-description { margin: 10px 0 12px; color: #6f6f6f; font-size: 13px; line-height: 1.35; }
+.er-chip-row { margin: 8px 0 10px; }
+.er-chip { display: inline; font-size: 12px; color: #666; margin-right: 14px; }
+.er-winner-summary { margin: 0 0 8px; color: var(--er-primary); font-size: 14px; font-weight: 700; }
+
+/* ── Winner banner ── */
+.er-winner-banner { padding: 10px 14px 12px; color: #fff; }
+.er-winner-banner-label { display: flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 7px; }
+.er-winner-banner-check-icon { display: inline-flex; align-items: center; justify-content: center; width: 14px; height: 14px; border-radius: 50%; border: 2px solid #fff; font-size: 9px; line-height: 1; font-weight: 700; }
+.er-winner-banner-check-icon::before { content: "\2713"; }
+.er-winner-banner-body { display: flex; align-items: center; gap: 12px; }
+.er-winner-banner-photo { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: 0 0 44px; border: 2px solid rgba(255,255,255,.55); }
+.er-winner-banner-text { font-size: 17px; font-weight: 700; line-height: 1.3; }
+
+/* ── Toggle tab ── */
+.er-toggle-details { display: inline-flex; align-items: center; gap: 6px; border: 1px solid var(--er-line-soft); border-top: 0; background: #e4e4e4; color: #333; padding: 5px 13px 6px; font-size: 11px; font-weight: 700; letter-spacing: .05em; text-transform: uppercase; cursor: pointer; border-radius: 0 0 4px 4px; transition: background .15s; margin: 0; font-family: inherit; }
+.er-toggle-details:hover { background: #d0d0d0; }
+.er-toggle-details-arrow { display: inline-block; transition: transform .3s ease; font-size: 10px; line-height: 1; }
+.er-toggle-details.open .er-toggle-details-arrow { transform: rotate(180deg); }
+
+/* ── Tables ── */
+.er-results-table { width: 100%; border-collapse: collapse; border: 1px solid var(--er-line-soft); background: #f7f7f7; table-layout: fixed; }
+.er-results-meta { display: flex; justify-content: space-between; align-items: center; gap: 12px; border: 1px solid var(--er-line-soft); border-bottom: 0; background: #ececec; color: #555; font-size: 12px; padding: 8px 12px; }
+.er-round-table-wrap { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.er-results-table th, .er-results-table td { border-bottom: 1px solid var(--er-line-soft); padding: 8px 10px; text-align: left; font-size: 17px; }
+.er-results-table th:nth-child(2), .er-results-table td:nth-child(2) { padding-left: 28px; }
+.er-results-table th { background: #f0f0f0; color: #555; text-transform: uppercase; letter-spacing: .03em; font-size: 12px; }
+
+/* Candidate cell */
+.er-candidate-cell { padding: 0 !important; display: flex; align-items: center; gap: 8px; min-height: 48px; overflow: hidden; }
+.er-party-bar { width: 5px; align-self: stretch; flex: 0 0 5px; background: #7850be; }
+.er-candidate-name { display: block; flex: 1 1 auto; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding: 0; }
+.er-candidate-photo { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; flex: 0 0 28px; border: 1px solid rgba(0,0,0,.15); }
+.er-candidate-check { flex: 0 0 auto; width: 8px; height: 14px; margin-left: auto; margin-right: 10px; border-right: 2px solid #fff; border-bottom: 2px solid #fff; transform: rotate(45deg); transform-origin: center; }
+.er-candidate-cell--winner { color: #fff; font-weight: 700; }
+
+/* Status */
+.er-status-winner    { color: var(--er-primary); font-weight: 700; }
+.er-status-eliminated { color: #9a2a2a; }
+.er-status-active    { color: #666; }
+
+/* Full results dropdown */
+.er-full-results { overflow: hidden; max-height: 0; opacity: 0; transition: max-height .38s ease, opacity .28s ease, padding-top .38s ease; padding-top: 0; border-top: 0 solid #c7c7c7; }
+.er-full-results.open { max-height: 4000px; opacity: 1; padding-top: 10px; border-top: 1px dashed #c7c7c7; margin-top: 12px; }
+.er-full-results-title { margin: 0 0 8px; color: var(--er-heading); font-family: "Barlow Condensed","Segoe UI",Arial,sans-serif; font-size: 20px; font-weight: 700; }
+.er-rounds-grid { display: grid; gap: 10px; }
+.er-round-card { border: 1px solid var(--er-line-soft); background: var(--er-soft); padding: 10px; }
+.er-round-title { margin: 0 0 6px; color: var(--er-heading); font-family: "Barlow Condensed","Segoe UI",Arial,sans-serif; font-size: 20px; font-weight: 700; }
+.er-round-note { margin: 8px 0 0; color: #666; font-size: 12px; }
+.er-empty-state { color: #666; }
+
+/* ── Intro overlay ── */
+#er-intro-overlay { position: fixed; inset: 0; background: var(--er-primary,#1a1a6e); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity .9s ease; }
+#er-intro-overlay.fade-out { opacity: 0; pointer-events: none; }
+#er-intro-overlay.gone { display: none; }
+#er-intro-canvas { position: absolute; inset: 0; pointer-events: none; }
+#er-intro-logo { display: flex; align-items: center; gap: 5px; position: relative; z-index: 1; }
+.er-intro-digit { display: inline-flex; align-items: center; justify-content: center; width: 72px; height: 98px; font-family: "Barlow Condensed","Segoe UI",Arial,sans-serif; font-size: 88px; font-weight: 800; color: #fff; opacity: 0; transform: translateY(-90px); transition: transform .55s cubic-bezier(.34,1.56,.64,1), opacity .35s ease; }
+.er-intro-digit.from-bottom { transform: translateY(90px); }
+.er-intro-digit.settled { transform: translateY(0); opacity: 1; }
+#er-intro-title { font-family: "Barlow Condensed","Segoe UI",Arial,sans-serif; font-size: 22px; font-weight: 700; letter-spacing: .45em; text-transform: uppercase; color: transparent; margin-top: 18px; position: relative; z-index: 1; transition: color .9s ease; }
+#er-intro-title.visible { color: rgba(255,255,255,.75); }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .er-header-inner { flex-direction: column; align-items: flex-start; }
+  .er-year-logo { border-right: 0; border-bottom: 1px solid var(--er-line); width: 100%; justify-content: center; }
+  .er-jurisdiction-tabs { width: 100%; flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .er-jurisdiction-tab { flex: 0 0 auto; font-size: 16px; padding: 10px 14px; }
+  .er-page-content { padding: 14px 10px 12px; }
+  .er-jurisdiction-heading { font-size: 36px; margin-bottom: 14px; padding-bottom: 10px; }
+  .er-election-title { font-size: 22px; }
+  .er-race-title { font-size: 26px; }
+  .er-chip { display: inline-block; margin-right: 8px; margin-bottom: 4px; }
+  .er-results-meta { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .er-results-table th, .er-results-table td { font-size: 13px; white-space: nowrap; }
+  .er-results-table { table-layout: auto; }
+  .er-results-table th:first-child, .er-results-table td:first-child { min-width: 220px; }
+  .er-full-results, .er-round-card, .er-race-card, .er-election-group, .er-page-content { min-width: 0; max-width: 100%; overflow-x: hidden; }
+  .er-race-card > .er-round-table-wrap { overflow-x: hidden; }
+  .er-full-results .er-round-table-wrap { overflow-x: auto; }
+  .er-full-results .er-results-table { min-width: 620px; }
+  .er-results-table th:nth-child(2), .er-results-table td:nth-child(2) { padding-left: 14px; }
+  .er-candidate-cell { min-height: 42px; }
+  .er-candidate-photo { width: 24px; height: 24px; flex-basis: 24px; }
+}
