@@ -1,0 +1,134 @@
+{
+  "partyStyles": {
+    "Democratic": {
+      "barColor": "#1f5fbf",
+      "winnerBackground": "#1f5fbf",
+      "winnerText": "#ffffff"
+    },
+    "Republican": {
+      "barColor": "#c7362f",
+      "winnerBackground": "#c7362f",
+      "winnerText": "#ffffff"
+    },
+    "Independent": {
+      "barColor": "#8f8f8f",
+      "winnerBackground": "#8f8f8f",
+      "winnerText": "#ffffff"
+    },
+    "Green": {
+      "barColor": "#2f8f4a",
+      "winnerBackground": "#2f8f4a",
+      "winnerText": "#ffffff"
+    }
+  },
+  "jurisdictions": [
+    {
+      "jurisdiction": "Mayflower",
+      "elections": [
+        {
+          "id": "mayflower-general-2026",
+          "title": "Mayflower General Election Results",
+          "updatedAt": "November 5, 2026",
+          "races": [
+            {
+              "raceId": "mayflower-mayor",
+              "name": "Mayor",
+              "description": "Avery Lane, the incumbent mayor, is facing challenger Jordan Kim in one of Mayflower's closest citywide races.",
+              "seats": 1,
+              "ballotsCast": 10000,
+              "candidates": [
+                { "id": "avery-lane", "name": "Avery Lane", "party": "Democratic", "imageUrl": "https://secure.gravatar.com/avatar/?s=64&d=mm&r=g" },
+                { "id": "jordan-kim", "name": "Jordan Kim", "party": "Republican" }
+              ],
+              "rounds": [
+                {
+                  "roundNumber": 1,
+                  "note": "Mixed input format: one candidate entered by votes, one by percent.",
+                  "results": [
+                    { "candidateId": "avery-lane", "votes": 5400, "status": "winner" },
+                    { "candidateId": "jordan-kim", "percent": 46.0, "status": "active" }
+                  ]
+                }
+              ]
+            },
+            {
+              "raceId": "mayflower-council-at-large",
+              "name": "City Council At-Large",
+              "description": "Voters rank candidates for two seats. Status carries across rounds unless explicitly changed.",
+              "seats": 3,
+              "ballotsCast": 12000,
+              "candidates": [
+                { "id": "nina-patel", "name": "Nina Patel", "party": "Democratic" },
+                { "id": "owen-james", "name": "Owen James", "party": "Independent" },
+                { "id": "maya-ortiz", "name": "Maya Ortiz", "party": "Republican" },
+                { "id": "leo-grant", "name": "Leo Grant", "party": "Green" }
+              ],
+              "rounds": [
+                {
+                  "roundNumber": 1,
+                  "note": "Round 1 with mixed votes and percentages.",
+                  "results": [
+                    { "candidateId": "nina-patel", "votes": 4200, "status": "active" },
+                    { "candidateId": "owen-james", "percent": 25.83, "status": "active" },
+                    { "candidateId": "maya-ortiz", "votes": 2800, "status": "active" },
+                    { "candidateId": "leo-grant", "percent": 15.83, "status": "eliminated" }
+                  ]
+                },
+                {
+                  "roundNumber": 2,
+                  "note": "Second winner declared; eliminated candidates omitted.",
+                  "results": [
+                    { "candidateId": "nina-patel", "percent": 44.2, "status": "winner" },
+                    { "candidateId": "owen-james", "votes": 3600, "status": "winner" },
+                    { "candidateId": "maya-ortiz", "percent": 25.83, "status": "winner" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "jurisdiction": "Harrison",
+      "elections": [
+        {
+          "id": "ridgeway-primary-2026",
+          "title": "Summer Midterm Election",
+          "updatedAt": "June 29th, 2026",
+          "races": [
+            {
+              "raceId": "ridgeway-governor",
+              "name": "Governor",
+              "description": "Single-winner ranked choice race example.",
+              "seats": 1,
+              "ballotsCast": 9380,
+              "candidates": [
+                { "id": "taylor-brooks", "name": "ZoomMaarten", "party": "Independent" },
+                { "id": "riley-chen", "name": "Michlganboy777", "party": "Democratic" },
+                { "id": "sam-rivera", "name": "Stanlabs", "party": "Republican" }
+              ],
+              "rounds": [
+                {
+                  "roundNumber": 1,
+                  "results": [
+                    { "candidateId": "taylor-brooks", "votes": 3520, "status": "active" },
+                    { "candidateId": "riley-chen", "votes": 3201, "status": "active" },
+                    { "candidateId": "sam-rivera", "votes": 2659, "status": "eliminated" }
+                  ]
+                },
+                {
+                  "roundNumber": 2,
+                  "results": [
+                    { "candidateId": "taylor-brooks", "votes": 5012, "status": "winner" },
+                    { "candidateId": "riley-chen", "votes": 4368 }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
