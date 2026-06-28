@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Election Results Dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="intro-overlay" aria-hidden="true">
+      <canvas id="intro-canvas"></canvas>
+      <div id="intro-logo"></div>
+      <div id="intro-title">Elections</div>
+    </div>
+    <header class="site-header">
+      <div class="header-inner">
+        <div id="yearLogo" class="year-logo" aria-label="Election year"></div>
+        <nav class="jurisdiction-tabs" id="jurisdictionTabs" aria-label="Jurisdictions"></nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <section id="resultsContainer" aria-live="polite"></section>
+    </main>
+
+    <template id="roundTemplate">
+      <section class="round-card">
+        <h4 class="round-title"></h4>
+        <div class="round-table-wrap">
+          <table class="results-table">
+            <thead>
+              <tr>
+                <th>Candidate</th>
+                <th>Party</th>
+                <th>Votes</th>
+                <th>Percent</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <p class="round-note"></p>
+      </section>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
